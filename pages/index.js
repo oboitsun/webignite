@@ -7,8 +7,15 @@ import HeroSection from "../components/HeroSection";
 import ShowCase from "../components/ShowCase";
 import CarouselSection from "../components/CarouselSection";
 import { motion } from "framer-motion";
+import useInView from "react-cool-inview";
 
 export default function Home() {
+  const { observe, inView } = useInView({
+    threshold: 0.4,
+    onEnter: ({ unobserve }) => {
+      unobserve();
+    },
+  });
   return (
     <div className="min-h-screen bg-purp">
       <Head>
@@ -36,16 +43,23 @@ export default function Home() {
           />
         </motion.div>
         <motion.div
-          initial={{ height: 3000 }}
+          initial={{ height: 800 }}
           animate={{ height: 320 }}
           transition={{ duration: 1.5, delay: 0 }}
           className="absolute bottom-0 left-0 w-full  bg-gradient-to-t from-purp to-transparent"
         ></motion.div>
       </div>
-      <ChoosePackageSection />
-      <ShowCase />
-      <CarouselSection />
-      <Form />
+      <div ref={observe}>
+        <ChoosePackageSection />
+      </div>
+      {inView && (
+        <>
+          {" "}
+          <ShowCase />
+          <CarouselSection />
+          <Form />
+        </>
+      )}
       <Header />
     </div>
   );

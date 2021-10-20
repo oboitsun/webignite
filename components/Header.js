@@ -26,8 +26,19 @@ export default function Header() {
       </Link>
       <div className="flex text-white font-bold text-lg leading-none gap-14 items-center">
         {links.map((link, i) => (
-          <Link className="" key={i} href={link.href}>
-            <a>{link.text}</a>
+          <Link key={i} href={link.href}>
+            <a
+              className={`group relative ${
+                i % 2 === 0 ? "hover:text-grn" : "hover:text-ylw"
+              } transition-all`}
+            >
+              {link.text}
+              <div
+                className={`absolute -bottom-2 group-hover:w-full h-1 transition-all w-0 ${
+                  i % 2 === 0 ? "bg-grn" : "bg-ylw"
+                }`}
+              ></div>
+            </a>
           </Link>
         ))}
         <Button text="order now" styling="ylw" href="/" />
