@@ -11,7 +11,7 @@ import useInView from "react-cool-inview";
 
 export default function Home() {
   const { observe, inView } = useInView({
-    threshold: 0.4,
+    threshold: 0.2,
     onEnter: ({ unobserve }) => {
       unobserve();
     },
@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="w-full  relative h-[854px] maxh overflow-hidden">
+      <div className="w-full  relative h-[854px] maxh overflow-hidden hero-section">
         <Header />
         <HeroSection />
         <motion.div
