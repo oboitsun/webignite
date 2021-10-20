@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
 const links = [
-  { href: "", text: "Packages" },
-  { href: "", text: "Process" },
-  { href: "", text: "Testimonials" },
-  { href: "", text: "Contact us" },
+  { href: "/", text: "Packages" },
+  { href: "/", text: "Process" },
+  { href: "/", text: "Testimonials" },
+  { href: "/", text: "Contact us" },
 ];
 export default function Header() {
   //absolute top-0 w-full left-1/2 transform -translate-x-1/2
@@ -15,6 +15,7 @@ export default function Header() {
       <Link href="/">
         <a>
           <Image
+            priority={true}
             layout="fixed"
             width={154}
             height={65}

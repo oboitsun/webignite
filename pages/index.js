@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import ShowCase from "../components/ShowCase";
 import CarouselSection from "../components/CarouselSection";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -19,16 +20,27 @@ export default function Home() {
       <div className="w-full  relative h-[854px] maxh overflow-hidden">
         <Header />
         <HeroSection />
-        <div className="w-full h-full absolute top-0 left-0 z-0">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0 }}
+          className="w-full h-full absolute top-0 left-0 z-0"
+        >
           <Image
+            priority={true}
             layout="responsive"
             width={1440}
             height={854}
             src="/imgs/comb-pattern.png"
             alt="pattern"
           />
-        </div>
-        <div className="absolute bottom-0 left-0 w-full h-80 bg-gradient-to-t from-purp to-transparent"></div>
+        </motion.div>
+        <motion.div
+          initial={{ height: 3000 }}
+          animate={{ height: 320 }}
+          transition={{ duration: 1.5, delay: 0 }}
+          className="absolute bottom-0 left-0 w-full  bg-gradient-to-t from-purp to-transparent"
+        ></motion.div>
       </div>
       <ChoosePackageSection />
       <ShowCase />

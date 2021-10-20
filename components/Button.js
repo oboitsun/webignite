@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-export default function Button({ href = "", text = "", styling, full }) {
+export default function Button({ href = "/", text = "", styling, full }) {
   const styles = { ylw: "bg-ylw", grn: "bg-grn" };
   return (
     <Link href={href}>

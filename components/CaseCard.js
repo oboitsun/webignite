@@ -3,8 +3,10 @@ import Image from "next/image";
 import Button from "./Button";
 export default function CaseCard({ data }) {
   return (
-    <div className="w-full h-full relative group">
-      <Image src={data.imgSrc} alt={data.name} layout="fill" />
+    <div className="w-full h-full relative group overflow-hidden">
+      <div className="group-hover:scale-110 w-full h-full transition-transform">
+        <Image src={data.imgSrc} alt={data.name} layout="fill" />
+      </div>
       <div
         className={`case-card ${
           data?.hovered ? "opacity-100 " : "opacity-0"

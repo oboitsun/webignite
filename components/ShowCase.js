@@ -1,6 +1,7 @@
 import React from "react";
 import CaseCard from "./CaseCard";
-
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 const cases = [
   {
     imgSrc: "/imgs/pic1.png",
@@ -45,13 +46,33 @@ const cases = [
   },
 ];
 export default function ShowCase() {
+  const { ref, inView } = useInView({ threshold: 0.4, triggerOnce: true });
+
+  const cont = {
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+    hidden: { opacity: 0 },
+  };
+  const item = { show: { opacity: 1 }, hidden: { opacity: 0 } };
+
   return (
-    <section className="w-full grid grid-rows-2  grid-cols-4">
+    <motion.section
+      ref={ref}
+      variants={cont}
+      animate={inView ? "show" : "hidden"}
+      initial="hidden"
+      className="w-full grid grid-rows-2  grid-cols-4"
+    >
       {cases.map((c, i) => (
-        <div key={i} className="w-full h-[25vw]  relative">
+        <motion.div variants={item} key={i} className="w-full h-[25vw]  relative">
           <CaseCard data={c} />
-        </div>
+        </motion.div>
       ))}
-    </section>
+    </motion.section>
   );
 }

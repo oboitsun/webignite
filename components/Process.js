@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 export default function Process() {
+  const { ref, inView } = useInView();
   const process = [
     {
       alt: "pay",
@@ -34,15 +37,33 @@ export default function Process() {
       src: "/imgs/play.svg",
     },
   ];
+  const cont = {
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+    hidden: { opacity: 0 },
+  };
+  const item = { show: { x: 0, opacity: 1 }, hidden: { x: -100, opacity: 0 } };
+
   return (
-    <div className="w-full flex items-center pt-10">
+    <div ref={ref} className="w-full flex items-center pt-10 pb-20">
       <p className="text-[40px] leading-[48px] text-grn font-black uppercase flex-shrink-0 w-max pr-10">
         Process:
       </p>
-      <div className="flex items-center justify-between flex-grow-1 w-full">
+      <motion.div
+        variants={cont}
+        initial="hidden"
+        animate={inView ? "show" : "hidden"}
+        className="flex items-center justify-between flex-grow-1 w-full"
+      >
         {process.map((p, i) => (
           <>
-            <div
+            <motion.div
+              variants={item}
               key={p.alt}
               className="w-[62px] h-[62px] flex items-center justify-center rounded-full bg-grn relative"
             >
@@ -50,10 +71,10 @@ export default function Process() {
               <p className="text-white pt-1 uppercase font-semibold absolute -bottom-8">
                 {p.alt}
               </p>
-            </div>
+            </motion.div>
 
             {i < process.length - 1 && (
-              <div key={i} className="px-6">
+              <motion.div variants={item} key={i} className="px-6">
                 <Image
                   src="/imgs/arrow-right.svg"
                   layout="fixed"
@@ -61,11 +82,11 @@ export default function Process() {
                   height={15}
                   alt="arrow"
                 />
-              </div>
+              </motion.div>
             )}
           </>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
