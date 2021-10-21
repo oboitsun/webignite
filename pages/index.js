@@ -56,7 +56,7 @@ export default function Home() {
       <CarouselSection />
       <Form />
 
-      <Header />
+      <Header showMenu={showMenu} setShowMenu={setShowMenu} />
       <HeaderModal showMenu={showMenu} setShowMenu={setShowMenu} />
     </div>
   );
