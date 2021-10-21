@@ -6,7 +6,7 @@ export default function ChoosePackageSection() {
   return (
     <section id="packages" className="bg-purp pb-10 pt-20 lg:pt-0">
       <div className=" max-w-864 xl:max-w-1080 mx-auto relative">
-        <div className="flex lg:flex-row flex-col text-center lg:text-start text-white items-center justify-between uppercase ">
+        <div className="flex lg:flex-row flex-col text-center lg:text-left text-white items-center justify-between uppercase ">
           <span className="font-black text-[26px] lg:text-[32px]  xl:text-[40px] leading-tight xl:leading-[48px] max-w-[348px] xl:max-w-[435px] ">
             Choose Your web design package!
           </span>
