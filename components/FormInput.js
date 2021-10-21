@@ -5,7 +5,11 @@ export default function FormInput({ type = "text", plchldr = "" }) {
     <input
       type={type}
       placeholder={plchldr}
-      className="rounded-full bg-white p-5  text-sm font-semibold placeholder-black appearance-none"
+      className={
+        type === "submit"
+          ? "cursor-pointer uppercase text-base px-4 py-3 rounded-full font-bold leading-none text-white flex items-center justify-center transition-all hover:scale-90 bg-grn w-full "
+          : "rounded-full bg-white p-5  text-sm font-semibold placeholder-black appearance-none"
+      }
     />
   );
 }

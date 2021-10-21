@@ -107,7 +107,7 @@ export default function ProcessMob() {
                 } lg:block `}
               >
                 <Image
-                  className={i === 3 && "transform rotate-180"}
+                  className={i === 3 ? "" : "transform rotate-180"}
                   src="/imgs/arrow-right.svg"
                   layout="fixed"
                   width={28}

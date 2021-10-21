@@ -26,10 +26,11 @@ export default function Form() {
       <div className=" max-w-864 xl:max-w-1080 mx-auto flex gap-[30px] lg:flex-row flex-col items-center">
         <form
           className="grid grid-cols-1 grid-rows-4 gap-y-[30px] max-w-[400px] w-full flex-shrink-0 pt-4 order-2 lg:order-1"
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
-          action="mailto:thewip3out@gmail.com"
+          // onSubmit={(e) => {
+          //   // e.preventDefault();
+          //   console.log(e.target);
+          // }}
+          action="mailto:hello@webignite.com"
           method="POST"
           encType="multipart/form-data"
           name="EmailForm"
@@ -37,7 +38,8 @@ export default function Form() {
           <FormInput plchldr="Name" />
           <FormInput plchldr="Phoe Number / Email" />
           <FormInput plchldr="How can we help?" />
-          <Button full type="submit" text="Get in touch now" styling="grn" />
+          <FormInput type="submit" />
+          {/* <Button full type="submit" text="Get in touch now" styling="grn" /> */}
         </form>
 
         <motion.div
