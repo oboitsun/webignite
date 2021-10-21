@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import ChoosePackageSection from "../components/ChoosePackageSection";
@@ -8,6 +9,7 @@ import ShowCase from "../components/ShowCase";
 import CarouselSection from "../components/CarouselSection";
 import { motion } from "framer-motion";
 import useInView from "react-cool-inview";
+import HeaderModal from "../components/HeaderModal";
 
 export default function Home() {
   const { observe, inView } = useInView({
@@ -16,6 +18,7 @@ export default function Home() {
       unobserve();
     },
   });
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <div className="min-h-screen bg-purp">
       <Head>
@@ -24,8 +27,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="w-full  relative h-[854px] maxh overflow-hidden hero-section">
-        <Header />
+      <div className="w-full  relative h-[697px] lg:h-[753px] xl:h-[854px] maxh overflow-hidden hero-section">
+        <Header showMenu={showMenu} setShowMenu={setShowMenu} />
         <HeroSection />
         <motion.div
           initial={{ opacity: 0 }}
@@ -35,32 +38,28 @@ export default function Home() {
         >
           <Image
             priority={true}
-            layout="responsive"
+            objectFit="cover"
+            layout="fill"
             width={1440}
             height={854}
             src="/imgs/comb-pattern.png"
             alt="pattern"
           />
         </motion.div>
-        <motion.div
-          initial={{ height: 800 }}
-          animate={{ height: 320 }}
-          transition={{ duration: 1.5, delay: 0 }}
-          className="absolute bottom-0 left-0 w-full  bg-gradient-to-t from-purp to-transparent"
-        ></motion.div>
+        <motion.div className="absolute bottom-0 left-0 w-full h-10 lg:h-80  bg-gradient-to-t from-purp to-transparent"></motion.div>
       </div>
       <div ref={observe}>
         <ChoosePackageSection />
       </div>
       {inView && (
         <>
-          {" "}
           <ShowCase />
           <CarouselSection />
           <Form />
         </>
       )}
       <Header />
+      <HeaderModal showMenu={showMenu} setShowMenu={setShowMenu} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function Button({ href = "/", text = "", styling, full }) {
       <a
         className={`${
           full && "w-full"
-        } uppercase text-base px-4 py-3 rounded-full font-bold text-white flex items-center justify-center transition-all hover:scale-90 ${
+        } uppercase text-base px-4 py-3 rounded-full font-bold leading-none text-white flex items-center justify-center transition-all hover:scale-90 ${
           styles[styling]
         }`}
       >

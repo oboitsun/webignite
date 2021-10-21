@@ -66,10 +66,16 @@ export default function ShowCase() {
       variants={cont}
       animate={inView ? "show" : "hidden"}
       initial="hidden"
-      className="w-full grid grid-rows-2  grid-cols-4"
+      className="w-full grid grid-cols-2 grid-rows-4 lg:grid-rows-2  lg:grid-cols-4"
     >
       {cases.map((c, i) => (
-        <motion.div variants={item} key={i} className="w-full h-[25vw]  relative">
+        <motion.div
+          variants={item}
+          key={i}
+          className={`w-full h-[50vw] lg:h-[25vw]  relative ${
+            i === cases.length - 1 && "col-span-2 lg:col-span-1"
+          } ${i === cases.length - 2 && "hidden lg:block"}`}
+        >
           <CaseCard data={c} />
         </motion.div>
       ))}

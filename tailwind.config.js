@@ -27,6 +27,7 @@ module.exports = {
         lghtGray: "#DBDBDB",
       },
       maxWidth: {
+        864: "864px",
         1080: "1080px",
         1440: "1440px",
       },

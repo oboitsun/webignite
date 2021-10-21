@@ -2,17 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&display=swap");
 
 body {
   font-family: "Montserrat", sans-serif;
-}
-
-.ylw-shadow {
-  color: transparent;
-  /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
-
-  -webkit-text-stroke: 1px #a1c56f;
 }
 
 .shadow-cstm {
@@ -78,7 +71,41 @@ body {
   color: white;
 }
 .carousel {
-  padding: 0 2% !important;
+  padding: 0 20px !important;
+}
+.packages.carousel .swiper-button-next,
+.packages.carousel .swiper-button-prev {
+  background: #c7c7c7;
+  border: none;
+}
+.packages.carousel .swiper-button-prev {
+  top: 53%;
+  left: 14.5%;
+  transform: translateX(-50%);
+
+  color: white;
+}
+.packages.carousel .swiper-button-next {
+  top: 53%;
+  right: 14.5%;
+  transform: translateX(50%);
+  color: white;
+}
+.mob.carousel .swiper-button-prev {
+  top: 53%;
+  left: 10.5%;
+  transform: translateX(-50%);
+  background: #c7c7c7;
+  border: none;
+  color: white;
+}
+.mob.carousel .swiper-button-next {
+  top: 53%;
+  right: 10.5%;
+  transform: translateX(50%);
+  color: white;
+  background: #c7c7c7;
+  border: none;
 }
 /* .hero-section {
   background-color: #6e50b4;
