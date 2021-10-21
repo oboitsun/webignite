@@ -51,13 +51,11 @@ export default function Home() {
       <div ref={observe}>
         <ChoosePackageSection />
       </div>
-      {inView && (
-        <>
-          <ShowCase />
-          <CarouselSection />
-          <Form />
-        </>
-      )}
+
+      <ShowCase />
+      <CarouselSection />
+      <Form />
+
       <Header />
       <HeaderModal showMenu={showMenu} setShowMenu={setShowMenu} />
     </div>

@@ -96,14 +96,14 @@ export default function HeroSection() {
         </motion.div>
         <Button href="/" styling="grn" text="order now" />
       </motion.div>
-      <motion.div className="hidden xl:block w-[71%] absolute top-[-10%] left-[50%]">
+      <motion.div className="hidden lg:block w-[85%] absolute top-1/2 transform -translate-y-1/2 right-[-50%]">
         <Image
           priority={true}
           src="/imgs/LAPTOP1.png"
           alt="laptop"
           layout="responsive"
-          width={767}
-          height={586}
+          width={1944}
+          height={1154}
         />
       </motion.div>
     </div>
