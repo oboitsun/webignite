@@ -53,7 +53,6 @@ export default function Process() {
   return (
     <>
       <div
-        id="process"
         ref={ref}
         className="lg:flex hidden w-full  items-center pt-10 pb-20 relative z-[1]"
       >

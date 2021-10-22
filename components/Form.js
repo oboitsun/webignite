@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 import FormInput from "./FormInput";
 import Image from "next/image";
@@ -6,6 +6,36 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function Form() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Sending");
+    let data = {
+      name,
+      email,
+      message,
+    };
+    fetch("/api/hello", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log("Response received");
+      if (res.status === 200) {
+        console.log("Response succeeded!");
+        setSubmitted(true);
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
+    });
+  };
   const { ref, inView } = useInView({ threshold: 0.5 });
   const cont = {
     show: {
@@ -25,21 +55,38 @@ export default function Form() {
     >
       <div className=" max-w-864 xl:max-w-1080 mx-auto flex gap-[30px] lg:flex-row flex-col items-center">
         <form
+          onSubmit={(e) => {
+            handleSubmit(e);
+          }}
           className="grid grid-cols-1 grid-rows-4 gap-y-[30px] max-w-[400px] w-full flex-shrink-0 pt-4 order-2 lg:order-1"
-          // onSubmit={(e) => {
-          //   // e.preventDefault();
-          //   console.log(e.target);
-          // }}
-          action="mailto:hello@webignite.com"
-          method="POST"
-          encType="multipart/form-data"
-          name="EmailForm"
         >
-          <FormInput plchldr="Name" />
-          <FormInput plchldr="Phoe Number / Email" />
-          <FormInput plchldr="How can we help?" />
-          <FormInput type="submit" />
-          {/* <Button full type="submit" text="Get in touch now" styling="grn" /> */}
+          <FormInput
+            plchldr="Name"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+          <FormInput
+            plchldr=" Email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <FormInput
+            plchldr="How can we help?"
+            value={message}
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+          />
+          <FormInput
+            sent={submitted}
+            disabled={submitted}
+            value={submitted ? "Thank you" : "SEND"}
+            type="submit"
+          />
         </form>
 
         <motion.div

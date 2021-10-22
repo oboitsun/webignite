@@ -24,7 +24,9 @@ export default function ChoosePackageSection() {
           </div>
         </div>
         <Packages />
-        <Process />
+        <div id="process">
+          <Process />
+        </div>
         <div className="absolute hidden lg:block right-[-13%] bottom-0 transform  w-[18%]">
           <Image
             src="/imgs/nz-map.png"

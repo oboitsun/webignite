@@ -51,7 +51,6 @@ export default function ProcessMob() {
 
   return (
     <div
-      id="process"
       ref={ref}
       className="w-full max-w-[375px] mx-auto flex  flex-col items-center lg:hidden  pt-10 pb-20 relative z-[1] overflow-x-hidden"
     >
