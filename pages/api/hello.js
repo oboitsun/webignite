@@ -22,7 +22,7 @@ export default function handler(req, res) {
     // send mail with defined transport object
     let info = await transporter.sendMail({
       from: '"Wipeout👻" <nodemailer.mail.sender@gmail.com>', // sender address
-      to: "hello@webignite.nz ", // list of receivers
+      to: "hello@webignite.nz", // list of receivers
       subject: `Message From WebIgnite Contact Form`,
       text: `Name: ${req.body.name}\nContact info:${req.body.email}\nMessage:${req.body.message}`,
       html: `<div>Name: ${req.body.name}\nContact info:${req.body.email}\nMessage:${req.body.message}</div>`,
