@@ -12,7 +12,7 @@ const links = [
   { href: "testimonials", text: "Testimonials" },
   { href: "contact-us", text: "Contact us" },
 ];
-export default function HeaderModal({ showMenu, setShowMenu }) {
+export default function HeaderModal({ showMenu, setShowMenu, scrolled }) {
   const linkProps = {
     spy: true,
     smooth: true,
@@ -39,7 +39,11 @@ export default function HeaderModal({ showMenu, setShowMenu }) {
       }`}
     >
       <div className="relative w-full h-full flex flex-col pb-10">
-        <div className="py-10 px-10 flex justify-between items-center">
+        <div
+          className={`${
+            scrolled ? "py-3" : " py-10"
+          }  px-10 flex justify-between items-center`}
+        >
           <Link href="/">
             <a className="relative z-[1]">
               <Logo />

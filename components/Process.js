@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ProcessMob from "./ProcessMob";
 export default function Process() {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({ threshold: 0.6 });
   const process = [
     {
       alt: "pay",

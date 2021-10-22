@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 
 const Burger = ({ setShowMenu, showMenu }) => {
@@ -63,4 +64,4 @@ const Burger = ({ setShowMenu, showMenu }) => {
   );
 };
 
-export default Burger;
+export default React.memo(Burger);

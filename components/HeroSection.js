@@ -45,7 +45,7 @@ export default function HeroSection() {
   };
   const item = { show: { y: 0, opacity: 1 }, hidden: { y: -100, opacity: 0 } };
   return (
-    <div className="w-full max-w-864 xl:max-w-1080 mx-auto flex gap-9 relative z-[1] pt-10  px-10 lg:px-0">
+    <div className="w-full max-w-864 xl:max-w-1080 mx-auto flex gap-5 relative z-[1] pt-[165px]  px-10 lg:px-0">
       <motion.div
         variants={cont}
         animate="show"
@@ -96,7 +96,7 @@ export default function HeroSection() {
         </motion.div>
         <Button href="/" styling="grn" text="order now" />
       </motion.div>
-      <motion.div className="hidden lg:block w-[85%] absolute top-1/2 transform -translate-y-1/2 right-[-50%]">
+      <div className="hidden lg:block w-[85%] absolute top-1/2 pt-[165px] transform -translate-y-1/2 left-[60%]">
         <Image
           priority={true}
           src="/imgs/LAPTOP1.png"
@@ -105,7 +105,7 @@ export default function HeroSection() {
           width={1944}
           height={1154}
         />
-      </motion.div>
+      </div>
     </div>
   );
 }

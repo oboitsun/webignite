@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import ChoosePackageSection from "../components/ChoosePackageSection";
@@ -12,6 +12,7 @@ import useInView from "react-cool-inview";
 import HeaderModal from "../components/HeaderModal";
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
   const { observe, inView } = useInView({
     threshold: 0.2,
     onEnter: ({ unobserve }) => {
@@ -19,16 +20,27 @@ export default function Home() {
     },
   });
   const [showMenu, setShowMenu] = useState(false);
+  const handleScroll = (e) => {
+    if (e.target.scrollingElement.scrollTop < 10) setScrolled(false);
+    if (e.target.scrollingElement.scrollTop >= 10) setScrolled(true);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
   return (
-    <div className="min-h-screen bg-purp">
+    <div className="min-h-screen bg-purp overflow-x-hidden ">
       <Head>
         <title>Webignite - Home</title>
         <meta name="description" content="Webiginte" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="w-full  relative h-[697px] lg:h-[753px] xl:h-[854px] maxh overflow-hidden hero-section">
-        <Header showMenu={showMenu} setShowMenu={setShowMenu} />
+      <Header fixed showMenu={showMenu} setShowMenu={setShowMenu} scrolled={scrolled} />
+      <div className="w-full  relative h-[697px] lg:h-[753px] xl:h-[854px] maxh overflow-x-hidden hero-section">
         <HeroSection />
         <motion.div
           initial={{ opacity: 0 }}
@@ -57,7 +69,7 @@ export default function Home() {
       <Form />
 
       <Header showMenu={showMenu} setShowMenu={setShowMenu} />
-      <HeaderModal showMenu={showMenu} setShowMenu={setShowMenu} />
+      <HeaderModal showMenu={showMenu} setShowMenu={setShowMenu} scrolled={scrolled} />
     </div>
   );
 }
