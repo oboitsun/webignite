@@ -96,7 +96,7 @@ export default function HeroSection() {
         </motion.div>
         <Button href="/" styling="grn" text="order now" />
       </motion.div>
-      <div className="hidden lg:block w-[85%] absolute top-1/2 pt-[165px] transform -translate-y-1/2 left-[60%]">
+      <div className="hidden lg:block w-[85%] absolute top-1/2 pt-[165px] transform -translate-y-1/2 left-[60%] 2xl:w-[45%]">
         <Image
           priority={true}
           src="/imgs/LAPTOP1.png"

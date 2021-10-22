@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Button from "./Button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
@@ -33,16 +32,17 @@ const packages = [
 export default function Packages() {
   const types = {
     reg: {
-      spacing: "py-8  text-white border-white border",
-      heading: "text-white",
-      price: "text-white text-[40px] leading-[48px]",
+      spacing:
+        "py-8  text-white border-white border hover:text-black hover:bg-white hover:scale-110",
+      heading: "",
+      price: " text-[40px] leading-[48px] ",
 
       btn: "grn",
     },
     wide: {
-      spacing: "py-10 bg-white text-black",
-      heading: "text-black",
-      price: "text-ylw text-[56px] leading-[67px]",
+      spacing: "py-10 bg-white hover:text-white hover:bg-ylw hover:scale-110 z-[2]",
+      heading: " ",
+      price: "text-ylw text-[56px] leading-[67px] group-hover:text-white",
       btn: "ylw",
     },
   };
@@ -58,8 +58,6 @@ export default function Packages() {
           centeredSlides={true}
           navigation
           pagination={{ clickable: true }}
-          // onSwiper={(swiper) => console.log(swiper)}
-          // onSlideChange={() => console.log("slide change")}
         >
           {packages.map((p, i) => {
             const stl = types[i === 1 ? "wide" : "reg"];
@@ -71,7 +69,7 @@ export default function Packages() {
                     className={`flex relative overflow-hidden flex-col items-center w-full   rounded-[20px]  ${stl.spacing} my-auto  `}
                   >
                     {i === 1 && (
-                      <div className="bg-grn uppercase text-white text-[8px] leading-none -translate-x-1/2 -translate-y-1/2 transform -rotate-45 font-bold py-1.5 absolute top-8 left-8 px-10">
+                      <div className="bg-grn uppercase  text-[8px] leading-none -translate-x-1/2 -translate-y-1/2 transform -rotate-45 font-bold py-1.5 absolute top-8 left-8 px-10">
                         recommended
                       </div>
                     )}
@@ -108,10 +106,10 @@ export default function Packages() {
           return (
             <div
               key={i}
-              className={`flex flex-col items-center max-w-[288px] relative   overflow-hidden rounded-[20px] ${disableBorder[i]}  ${stl.spacing} my-auto  `}
+              className={`transition-all duration-500  flex flex-col items-center max-w-[288px] relative   overflow-hidden rounded-[20px] ${disableBorder[i]}  ${stl.spacing} my-auto  group`}
             >
               {i === 1 && (
-                <div className="bg-grn uppercase text-white text-[8px] leading-none -translate-x-1/2 -translate-y-1/2 transform -rotate-45 font-bold py-1.5 absolute top-8 left-8 px-10">
+                <div className="bg-grn uppercase text-white text-[8px] leading-none -translate-x-1/2 -translate-y-1/2 transform -rotate-45 font-bold py-1.5 absolute top-8 left-8 px-10 ">
                   recommended
                 </div>
               )}
@@ -125,7 +123,9 @@ export default function Packages() {
                 {p.heading}
               </p>
               <div className="px-[30px] flex-grow-1 mt-auto">
-                <p className="text-xs font-semibold  text-center pb-5 ">{p.descr}</p>
+                <p className="text-xs font-semibold  text-center pb-5 text-current">
+                  {p.descr}
+                </p>
                 <Button text="Order now" href="/" styling={stl.btn} full />
               </div>
             </div>

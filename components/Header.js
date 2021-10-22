@@ -58,7 +58,7 @@ export default function Header({ showMenu, setShowMenu, fixed, scrolled }) {
           ))}
           <Button text="order now" styling="ylw" href="/" />
           <Link href="tel:0800726543">
-            <a className="ml-5 text-xs text-white underline">0800 726 543</a>
+            <a className="ml-5 text-xs lg:text-lg text-white underline">0800 726 543</a>
           </Link>
         </div>
       </div>
