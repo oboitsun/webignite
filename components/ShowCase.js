@@ -5,44 +5,43 @@ import { useInView } from "react-intersection-observer";
 const cases = [
   {
     imgSrc: "/imgs/pic1.png",
-    name: "Case 1",
-    btn: { text: "learn more", styling: "grn", href: "/" },
+    name: "John Darke",
+    href: "http://www.johndarke.co.nz",
   },
   {
     imgSrc: "/imgs/pic2.png",
-    name: "Case 2",
-    btn: { text: "learn more", styling: "ylw", href: "/" },
+    name: "Maui Sheep Milk",
+    href: "https://mauisheepmilk.co.nz",
   },
   {
     imgSrc: "/imgs/pic3.png",
-    name: "Case 3",
-    btn: { text: "learn more", styling: "grn", href: "/" },
+    name: "City Sanctuary",
+    href: "https://citysanctuary.co.nz",
   },
   {
     imgSrc: "/imgs/pic4.png",
-    name: "Case 4",
-    btn: { text: "learn more", styling: "ylw", href: "/" },
+    name: "Kakahi Waka Adventures",
+    href: "http://kakahi-waka-adventures.webignite.nz",
   },
   {
     imgSrc: "/imgs/pic5.png",
-    name: "Case 5",
-    btn: { text: "learn more", styling: "grn", href: "/" },
+    name: "McMasonry",
+    href: "http://mcamasonry.webignite.nz",
   },
   {
     imgSrc: "/imgs/pic6.png",
-    name: "Case 6",
-    btn: { text: "learn more", styling: "ylw", href: "/" },
+    name: "Morgan Engineering",
+    href: "https://morganengineering.net.nz",
   },
   {
     imgSrc: "/imgs/pic7.png",
-    name: "Case 7",
-    btn: { text: "learn more", styling: "grn", href: "/" },
+    name: "Tony Murray Inspections",
+    href: "https://www.tonymurrayinspections.co.nz",
   },
   {
-    imgSrc: "/imgs/pic1.png",
-    name: "and more projects to come ",
-    btn: { text: "order now", styling: "ylw", href: "/" },
-    hovered: true,
+    imgSrc: "/imgs/pic8.png",
+    name: "KGA Geotechnical",
+    href: "https://kga.co.nz",
   },
 ];
 export default function ShowCase() {
@@ -76,7 +75,7 @@ export default function ShowCase() {
             i === cases.length - 1 && "col-span-2 lg:col-span-1"
           } ${i === cases.length - 2 && "hidden lg:block"}`}
         >
-          <CaseCard data={c} />
+          <CaseCard data={c} clr={i % 2 === 0 && true} />
         </motion.div>
       ))}
     </motion.section>

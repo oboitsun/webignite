@@ -50,7 +50,7 @@ export default function HeroSection() {
         variants={cont}
         animate="show"
         initial="hidden"
-        className="text-white font-black leading-none uppercase items-start flex flex-col xl:text-7xl w-max "
+        className="text-white font-black leading-none uppercase items-start flex flex-col xl:text-7xl w-max z-[1] shdw "
       >
         <motion.span
           variants={item}
@@ -96,14 +96,14 @@ export default function HeroSection() {
         </motion.div>
         <Button href="/" styling="grn" text="order now" />
       </motion.div>
-      <div className="hidden lg:block w-[85%] absolute top-1/2 pt-[165px] transform -translate-y-1/2 left-[60%] 2xl:w-[45%]">
+      <div className="hidden lg:block w-[90%] absolute bottom-[-40%]  transform  right-[-12%]  z-0">
         <Image
           priority={true}
           src="/imgs/LAPTOP1.png"
           alt="laptop"
           layout="responsive"
-          width={1944}
-          height={1154}
+          width={1113}
+          height={1130}
         />
       </div>
     </div>

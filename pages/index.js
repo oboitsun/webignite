@@ -40,7 +40,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header fixed showMenu={showMenu} setShowMenu={setShowMenu} scrolled={scrolled} />
-      <div className="w-full  relative h-[697px] lg:h-[753px] xl:h-[854px] maxh overflow-x-hidden hero-section">
+      <div className="w-full  relative h-[697px] lg:h-[753px] xl:h-[854px] maxh overflow-hidden hero-section">
         <HeroSection />
         <motion.div
           initial={{ opacity: 0 }}
@@ -64,7 +64,7 @@ export default function Home() {
         <ChoosePackageSection />
       </div>
 
-      <ShowCase />
+      {inView && <ShowCase />}
       <CarouselSection />
       <Form />
 

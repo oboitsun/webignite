@@ -82,7 +82,6 @@ body {
   top: 53%;
   left: 14.5%;
   transform: translateX(-50%);
-
   color: white;
 }
 .packages.carousel .swiper-button-next {
@@ -106,6 +105,9 @@ body {
   color: white;
   background: #c7c7c7;
   border: none;
+}
+.shdw {
+  text-shadow: 1px 1px 1px 1px black;
 }
 /* .hero-section {
   background-color: #6e50b4;
