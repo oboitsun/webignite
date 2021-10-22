@@ -40,8 +40,10 @@ const cases = [
   },
   {
     imgSrc: "/imgs/pic8.png",
-    name: "KGA Geotechnical",
+    name: "And more project to come",
     href: "https://kga.co.nz",
+    btn: true,
+    hovered: true,
   },
 ];
 export default function ShowCase() {
@@ -75,7 +77,7 @@ export default function ShowCase() {
             i === cases.length - 1 && "col-span-2 lg:col-span-1"
           } ${i === cases.length - 2 && "hidden lg:block"}`}
         >
-          <CaseCard data={c} clr={i % 2 === 0 && true} />
+          <CaseCard data={c} clr={i % 2 === 0 && true} hovered={i === cases.length - 1} />
         </motion.div>
       ))}
     </motion.section>
