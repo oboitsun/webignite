@@ -1,12 +1,12 @@
 import React from "react";
 import Carousel from "./Carousel";
-import Image from "next/image";
 
 export default function CarouselSection() {
   return (
     <section id="testimonials" className="relative py-20 xl:py-[100px] xl:pb-40">
       <div className="absolute top-0 left-0 z-0 w-full h-full">
-        <Image
+        <img
+          className="w-full h-full object-cover"
           objectFit="cover"
           layout="fill"
           width={1440}

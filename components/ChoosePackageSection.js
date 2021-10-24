@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import Packages from "./Packages";
 import Process from "./Process";
 export default function ChoosePackageSection() {
@@ -14,7 +14,8 @@ export default function ChoosePackageSection() {
             All of our websites can also include an e-commerce store if needed.
           </span>
           <div className="w-[110px] lg:w-[148px] xl:w-[164px] flex-shrink-0">
-            <Image
+            <img
+              className="w-full"
               src="/imgs/stripe.png"
               alt="payment-stripe"
               layout="responsive"
@@ -28,7 +29,8 @@ export default function ChoosePackageSection() {
           <Process />
         </div>
         <div className="absolute hidden lg:block right-[-13%] bottom-0 transform  w-[18%]">
-          <Image
+          <img
+            className="w-full"
             src="/imgs/nz-map.png"
             layout="responsive"
             width={276}

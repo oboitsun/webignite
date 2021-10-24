@@ -1,11 +1,16 @@
 import React from "react";
-import Image from "next/image";
 import Button from "./Button";
 export default function CaseCard({ data, clr, btn }) {
   return (
     <div className="w-full h-full relative group overflow-hidden">
       <div className="group-hover:scale-110 w-full h-full  transition-transform">
-        <Image src={data.imgSrc} alt={data.name} layout="fill" objectFit="cover" />
+        <img
+          className="w-full h-full object-cover"
+          src={data.imgSrc}
+          alt={data.name}
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
       <div
         className={`block case-card ${

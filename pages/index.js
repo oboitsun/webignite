@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import ChoosePackageSection from "../components/ChoosePackageSection";
 import Form from "../components/Form";
 import Header from "../components/Header";
@@ -48,7 +47,8 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0 }}
           className="w-full h-full absolute top-0 left-0 z-0"
         >
-          <Image
+          <img
+            className="object-cover w-full h-full"
             priority={true}
             objectFit="cover"
             layout="fill"

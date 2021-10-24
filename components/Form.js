@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import FormInput from "./FormInput";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -97,7 +97,8 @@ export default function Form() {
           className=" text-white uppercase relative  lg:order-2 order-1 text-center lg:text-left"
         >
           <div className="absolute lg:left-3/4 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 transform lg:-translate-y-1/2 w-2/3 max-w-[220px]">
-            <Image
+            <img
+              className="w-full"
               src="/imgs/nz-map.png"
               layout="responsive"
               width={276}

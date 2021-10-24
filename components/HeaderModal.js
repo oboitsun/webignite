@@ -4,7 +4,6 @@ import Button from "./Button";
 import { Link as Anchor } from "react-scroll";
 import Logo from "./Logo";
 import Burger from "./Burger";
-import Image from "next/image";
 
 const links = [
   { href: "packages", text: "Packages" },
@@ -24,14 +23,7 @@ export default function HeaderModal({ showMenu, setShowMenu, scrolled }) {
       setShowMenu(!showMenu);
     },
   };
-  //   useEffect(() => {
-  //     if (showMenu && window) {
-  //       window.document.body.style.position = "fixed";
-  //     }
-  //     if (!showMenu && window) {
-  //       window.document.body.style.position = "static";
-  //     }
-  //   }, [showMenu]);
+
   return (
     <div
       className={`h-screen w-full fixed z-20 top-0 left-0 transition-opacity   bg-purp ${
@@ -71,7 +63,8 @@ export default function HeaderModal({ showMenu, setShowMenu, scrolled }) {
         </p>
         <div className="w-full h-full absolute top-0 left-0 z-0 pointer-events-none ">
           <div className="w-full h-full opacity-30 bg-black top-0 left-0"></div>
-          <Image
+          <img
+            className="w-full h-full object-cover absolute top-0 left-0"
             priority={true}
             objectFit="cover"
             layout="fill"

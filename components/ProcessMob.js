@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 export default function ProcessMob() {
@@ -55,7 +55,8 @@ export default function ProcessMob() {
       className="w-full max-w-[375px] mx-auto flex  flex-col items-center lg:hidden  pt-10 pb-20 relative z-[1] overflow-x-hidden"
     >
       <div className="absolute lg:hidden block left-1/2 -translate-x-1/2 bottom-0 transform w-3/4 ">
-        <Image
+        <img
+          className="w-full"
           src="/imgs/nz-map.png"
           layout="responsive"
           width={276}
@@ -79,7 +80,7 @@ export default function ProcessMob() {
               key={p.alt}
               className="w-[62px] h-[62px] flex items-center justify-center rounded-full bg-grn relative"
             >
-              <Image src={p.src} layout="fixed" width={p.w} height={p.h} alt={p.alt} />
+              <img src={p.src} layout="fixed" width={p.w} height={p.h} alt={p.alt} />
               <p className="text-white pt-1 uppercase font-semibold absolute top-[135%] -translate-y-1/2 transform  w-[145%] text-center break-all">
                 {p.alt}
               </p>
@@ -105,7 +106,7 @@ export default function ProcessMob() {
                   i === 3 && "rotate-180"
                 } lg:block `}
               >
-                <Image
+                <img
                   className={i === 3 ? "" : "transform rotate-180"}
                   src="/imgs/arrow-right.svg"
                   layout="fixed"

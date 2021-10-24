@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import Button from "./Button";
 import { motion } from "framer-motion";
 const parts = [
@@ -89,7 +89,7 @@ export default function HeroSection() {
         >
           {parts.map((p, i) => (
             <div className="flex gap-[15px]   " key={i}>
-              <Image src={p.imgUrl} alt="icon" layout="fixed" width={26} height={26} />
+              <img src={p.imgUrl} alt="icon" layout="fixed" width={26} height={26} />
               {p.Text}
             </div>
           ))}
@@ -97,7 +97,8 @@ export default function HeroSection() {
         <Button href="/" styling="grn" text="order now" />
       </motion.div>
       <div className="hidden lg:block w-[90%] absolute bottom-[-40%]  transform  right-[-12%]  z-0">
-        <Image
+        <img
+          className="w-full"
           priority={true}
           src="/imgs/LAPTOP1.png"
           alt="laptop"

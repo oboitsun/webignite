@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ProcessMob from "./ProcessMob";
@@ -72,7 +72,7 @@ export default function Process() {
                 key={p.alt}
                 className="w-[50px] h-[50px] xl:w-[62px] xl:h-[62px] flex items-center justify-center rounded-full bg-grn relative"
               >
-                <Image src={p.src} layout="fixed" width={p.w} height={p.h} alt={p.alt} />
+                <img src={p.src} layout="fixed" width={p.w} height={p.h} alt={p.alt} />
                 <p className="text-white pt-1 uppercase font-semibold absolute -bottom-8">
                   {p.alt}
                 </p>
@@ -80,7 +80,7 @@ export default function Process() {
 
               {i < process.length - 1 && (
                 <motion.div variants={item} key={i} className="px-6">
-                  <Image
+                  <img
                     src="/imgs/arrow-right.svg"
                     layout="fixed"
                     width={28}
