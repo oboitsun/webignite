@@ -4,13 +4,7 @@ export default function CaseCard({ data, clr, btn }) {
   return (
     <div className="w-full h-full relative group overflow-hidden">
       <div className="group-hover:scale-110 w-full h-full  transition-transform">
-        <img
-          className="w-full h-full object-cover"
-          src={data.imgSrc}
-          alt={data.name}
-          layout="fill"
-          objectFit="cover"
-        />
+        <img className="w-full h-full object-cover" src={data.imgSrc} alt={data.name} />
       </div>
       <div
         className={`block case-card ${

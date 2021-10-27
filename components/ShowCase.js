@@ -40,7 +40,7 @@ const cases = [
   },
   {
     imgSrc: "/imgs/pic8.png",
-    name: "And more project to come",
+    name: "And more projects to come",
     href: "https://kga.co.nz",
     btn: true,
     hovered: true,
@@ -67,7 +67,7 @@ export default function ShowCase() {
       variants={cont}
       animate={inView ? "show" : "hidden"}
       initial="hidden"
-      className="w-full grid grid-cols-2 grid-rows-4 lg:grid-rows-2  lg:grid-cols-4"
+      className="w-full grid grid-cols-2 grid-rows-4 lg:grid-rows-2  lg:grid-cols-4 "
     >
       {cases.map((c, i) => (
         <motion.div
