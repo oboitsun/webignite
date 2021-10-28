@@ -18,7 +18,7 @@ export default function Form() {
       email,
       message,
     };
-    fetch("/api/hello", {
+    fetch("https://webignite.vercel.app/api/hello", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
