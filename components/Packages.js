@@ -32,7 +32,8 @@ const packages = [
 export default function Packages() {
   const types = {
     reg: {
-      spacing: "py-8  text-white border-white border hover:text-black  hover:scale-110",
+      spacing:
+        "py-8  text-white border-white border hover:text-black hover:bg-white  hover:scale-110",
       heading: "",
       price: " text-[40px] leading-[48px] ",
 
