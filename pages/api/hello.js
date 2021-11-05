@@ -1,8 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 require("dotenv").config();
 const PASSWORD = process.env.password;
-export default function handler(req, res) {
-  console.log(req.body);
+export default async function handler(req, res) {
+  // console.log(req.body);
   let nodemailer = require("nodemailer");
   async function main() {
     // Generate test SMTP service account from ethereal.email
@@ -28,9 +28,10 @@ export default function handler(req, res) {
       html: `<div>Name: ${req.body.name}\nContact info:${req.body.email}\nMessage:${req.body.message}</div>`,
     });
 
-    console.log("Message sent: %s", info.messageId);
+    return `Message sent: %s", ${info.messageId}`;
   }
 
-  main().catch(console.error);
-  res.json({ done: true });
+  const result = await main();
+  console.log(result);
+  res.json({ done: true, result });
 }
